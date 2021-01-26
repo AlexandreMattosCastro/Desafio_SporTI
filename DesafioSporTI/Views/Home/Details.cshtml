@@ -1,0 +1,30 @@
+﻿@model InfoData
+
+@{
+    var item = ViewData.Model;
+}
+
+<h2>Detalhes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Sexo)</th>
+            <th>@Html.DisplayNameFor(model => model.UF)</th>
+            <th>@Html.DisplayNameFor(model => model.ValorMaximo)</th>
+            <th>@Html.DisplayNameFor(model => model.ValorMinimo)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@item.ID.ToString()</td>
+            <td>@item.Nome</td>
+            <td>@item.Sexo</td>
+            <td>@item.UF</td>
+            <td>@item.ValorMaximo.ToString()</td>
+            <td>@item.ValorMinimo.ToString()</td>
+        </tr>
+    </tbody>
+</table>

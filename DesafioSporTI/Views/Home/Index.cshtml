@@ -1,0 +1,33 @@
+﻿@model IEnumerable<InfoData>
+@{
+    var list = ViewData.Model;
+}
+
+<h2>Lista</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Sexo)</th>
+            <th>@Html.DisplayNameFor(model => model.UF)</th>
+            <th>@Html.DisplayNameFor(model => model.ValorMaximo)</th>
+            <th>@Html.DisplayNameFor(model => model.ValorMinimo)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (InfoData item in list)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelitem => item.ID)</td>
+                <td>@Html.DisplayFor(modelitem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelitem => item.Sexo)</td>
+                <td>@Html.DisplayFor(modelitem => item.UF)</td>
+                <td>@Html.DisplayFor(modelitem => item.ValorMaximo)</td>
+                <td>@Html.DisplayFor(modelitem => item.ValorMinimo)</td>
+                <td><a asp-action="Details" asp-route-id="@item.ID">Detalhes</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
